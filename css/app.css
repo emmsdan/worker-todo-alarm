@@ -1,0 +1,71 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: Cochin, Georgia, Times, 'Times New Roman', serif
+}
+.shell {
+  background: #ddf;
+  padding: 20px;
+}
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #fff;
+  height: 40px;
+  padding: 10px 0 10px 0;
+  width: 100%;
+  box-shadow: 0px 0px 1px #123;
+  z-index: 1000;
+}
+main {
+  top: 55px;
+  width: 100%;
+  position: relative;
+  color: #123 ;
+}
+.side, .content {
+  padding: 10px;
+  overflow: hidden;
+}
+
+@media screen and   (min-width: 599px){   
+  main {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-gap: 20px;
+    grid-template-areas: 
+      "side content content"
+  }  
+  .side {
+    grid-area: side;
+  }
+  .content {
+    grid-area: content;
+  }
+}
+
+.side ul {
+  box-shadow: 0px 0px 2px #123;
+}
+.side ul, .side ul li {
+  display: inline-block;
+  list-style: none;
+  width: 100%;
+  background: #fff;
+}
+.side ul li{
+  text-align: center;
+  width: 99.5%;
+  margin: 2px;
+  padding: 15px 0px;
+}
+.side ul li:nth-child(odd):hover {
+  background: rgba(0, 0, 24, 0.1);
+}
+.side ul li:nth-child(even):hover {
+  background: rgba(110, 0, 0, 0.1);
+}
+.content {
+  
+}
