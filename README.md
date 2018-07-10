@@ -20,3 +20,9 @@ A simple todo alarm clock for work
 | create multiple account | can opporate as different user |
 | comming soon | Work as admin (set task and approve task as completed or not ) |
 
+### Dependencies
+
+| Name | Description |
+| ----- | ---------|
+| Vanilla Javascript | No use of Framework |
+| IndexDB | used to make storage for admin |
