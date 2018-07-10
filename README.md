@@ -13,8 +13,10 @@ A simple todo alarm clock for work
 
 ### Features
 
-| feature | description|
+| FEATURES | DESCRIPTION |
+| ---------- | ----------- |
 | PWA enable | works both online and offline |
 | Installable | Can be installed on your home screen |
 | create multiple account | can opporate as different user |
 | comming soon | Work as admin (set task and approve task as completed or not ) |
+
