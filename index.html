@@ -3,25 +3,52 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Worker Todo by EmmsDan Inc</title>
+  <title>WorkersTask.io by EmmsDan Inc</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" media="all" href="css/app.css" />
   <script src="logic/app.js"></script>
 </head>
-<body class="shell">
-  <header> 
-    ss
+<body class="shell enterFading">
+  <header class="w3-animate-top"> 
+      <h1 class="logo big">WorkersTask.io</h1>
+      <h1 class="logo small">WT.io</h1>
+      <div class="addRepo" data-worker-modal="trigger">+</div>
+    <div class="username">username <span>EmmsDa6576879guvin546789</span></div>
   </header>
   <main>
-    <div class="side">
+    <div class="side w3-animate-zoom">
       <ul>
-        <li> help</li>
-        <li> help</li>
+        <li class="header" onclick="lie()"> QUEUE IN TODO </li>
+        <li> work todo - <span class="red-text">deadline</span></li>
+        <li> work todo - <span class="red-text">deadline</span></li>
+        <li> work todo - <span class="red-text">deadline</span></li>
+        <li> work todo - <span class="red-text">deadline</span></li>
+        <li> work todo - <span class="red-text">deadline</span></li>
       </ul>
     </div>
-    <div class="content">
-      s
+    <div class="content w3-animate-right">
+      <div class="wrap">
+        <ul>
+          <li> emmmsdan </li>
+          <li> emmmsdan </li>
+          <li> emmmsdan </li>
+        </ul>
+      </div>
     </div>
   </main>
+  <div class="modal enterFading" data-worker-modal="true">
+    <div class="modal-content"> <div class="close" data-worker-modal='close'>x</div>
+        <h1 class="theme-dark-color toUpperCase div">  Add Office </h1>
+        <input data-work-title="true" placeholder="Name of Office">
+        <select data-work-select="true">
+          <option selected disabled>Opening Hour</option>
+        </select>
+        <select data-work-select="true">
+          <option selected disabled>Closing Hour</option>
+        </select>
+        <button data-work-button="true"> Add </button>
+      
+    </div>
+  </div>
 </body>
 </html>
