@@ -1,6 +1,6 @@
 
 window.addEventListener("load", () => {
-  if(typeof EventSource === "undefined" || typeof(Storage) === "undefined")  return unsupported();
+  if(typeof EventSource === "undefined" || typeof(Storage) === "undefined" || !window.indexedDB)  return unsupported();
     
   const modal = document.querySelector("[data-worker-modal='true']");
   // dynamically get the buttons that opens the modal
