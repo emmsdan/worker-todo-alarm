@@ -94,7 +94,7 @@ main {
   overflow: hidden;
 }
 
-@media screen and   (min-width: 599px){   
+@media all and   (min-width: 599px){   
   
 .addRepo {
   font-size: 4vmax;
@@ -144,7 +144,7 @@ main {
   color: #123;
   border-bottom: 1px solid #aaa;
 }
-@media screen and   (min-width: 599px){   
+@media all and   (min-width: 599px){   
   .side ul li.header {
     font-size: 2vmax;
   }
@@ -207,7 +207,7 @@ main {
   font-size: 2vmax;
   margin-top: 10px;
 }
-@media screen and   (min-width: 599px){   
+@media all and   (min-width: 599px){   
   .modal-content button[data-work-button='true'],
   .modal-content select[data-work-select='true'] {
       width: calc(100% - (80% + 50px));
@@ -257,7 +257,7 @@ main {
 .big {
   display: none !important;
 }
-@media screen and   (min-width: 599px){   
+@media all and   (min-width: 599px){   
   .small {
     display: none !important;
   }
@@ -346,6 +346,8 @@ main {
   bottom: 30px;
   visibility: hidden;
   z-index: 300000;
+  cursor: pointer;
+  text-transform: uppercase;
 }
 
 #snackbar.show {
@@ -359,14 +361,14 @@ main {
   word-wrap: break-word;
 }
 #snackbar a{
-  color: red;
+  color: black;
   text-transform: uppercase;
-  float: left;
+  float: right;
   padding: 2px;
   margin-right: 10px;
   text-decoration: none;
 }
-@media screen and   (min-width: 599px){   
+@media all and   (min-width: 599px){   
   #snackbar{
     top: 20px;
   }

@@ -103,13 +103,21 @@ class idbStorage {
 }
 
   const _store = (item, value) => {
-    localStorage.setItem(item, value);
+    const data = JSON.parse(_select(item));
+    if (data !== null) {
+      if(data[0].name === value[0].name){
+        return toast ('Already Exist In Database')
+      }
+      localStorage.setItem(item, JSON.stringify(value));
+      toast ('Data entered into Database')
+    }
+    return;
   }
   const _select = (item) => {
-    localStorage.getItem(item);
+    return localStorage.getItem(item);
   }
   const _delete = (item) => {
-    localStorage.getItem(item);
+    return localStorage.getItem(item);
   }
 
 // explicitly export class to global scope

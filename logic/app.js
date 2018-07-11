@@ -1,27 +1,6 @@
 
 window.addEventListener("load", () => {
-
-  const modal = document.querySelector("[data-worker-modal='true']");
-  // dynamically get the buttons that opens the modal
-  const triggerModal = document.querySelectorAll("[data-worker-modal='trigger'] ");
-    for (let btn of triggerModal) {
-      btn.addEventListener("click", () => {
-        modal.style.display = "block";
-      });
-    }
-  // dynamically Get the element that closes the modal
-  const closeModal = document.querySelectorAll("[data-worker-modal='close']");
-    for (let btn of closeModal) {
-      btn.addEventListener("click", () => {
-        modal.style.display = "none";
-      });
-    }
-  // When the user clicks anywhere outside of the modal, close it
-  window.addEventListener("click", (event) => {
-      if (event.target == modal) {
-          modal.style.display = "none";
-      }
-  });
+  const OfficeModal = new Modal('true');
 
   function fetchEvents () {
       return fetch('./logic/logic.js')
@@ -35,8 +14,8 @@ window.addEventListener("load", () => {
         console.log (`Error: code E120:  ${err}`);
       })
   }
-  if (!_select('emmsdan')){
-    modal.style.display = "block";    
+  if (!_select('offices')){
+    OfficeModal.display('true');
   }
 
 });
@@ -53,6 +32,10 @@ if(typeof EventSource !== "undefined" || typeof(Storage) !== "undefined" || wind
   script.setAttribute ('src', './logic/database.js');
   head.appendChild(script);
   
+  script = document.createElement('script');
+  script.setAttribute ('src', './logic/toals.js');
+  head.appendChild(script);
+
   script = document.createElement('script');
   script.setAttribute ('src', './logic/logic.js');
   head.appendChild(script);

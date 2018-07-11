@@ -25,44 +25,19 @@ const submitForm = (node) => {
 }
 
 const serverProcess = (fields) => {
-  console.log (fields)
+  let offices = '';
   if (fields[0].formType === 'addOffice'){
-    let offices = localStorage.getItem('offices');
+    offices = _select('offices');
     if (offices){
       offices = JSON.parse(offices);
-      offices.push (`{"name" : "${fields.officeName}", "open" : "${fields.closeHour}", "close" : "${fields.openHour}"}`);
-      //const $object =  '{"office" : [, "Joshua"]}';
-
-      offices = JSON.stringify(offices);
-      localStorage.setItem ('offices', offices)
+      offices.unshift (JSON.parse(`{"name" : "${fields.officeName}", "open" : "${fields.closeHour}", "close" : "${fields.openHour}"}`));
     }else{
       offices = [];
-      offices.push (`{"name" : "${fields.officeName}", "open" : "${fields.closeHour}", "close" : "${fields.openHour}"}`);
-      //const $object =  '{"office" : [, "Joshua"]}';
-
-      offices = JSON.stringify(offices);
-      localStorage.setItem ('offices', offices)
+      offices.unshift (JSON.parse(`{"name" : "${fields.officeName}", "open" : "${fields.closeHour}", "close" : "${fields.openHour}"}`));
     }
+    
+    if ( _store ('offices', offices) ) return OfficeModal.close();
+
   }
   
 }
-
-/* a little toast, won't kill */
-const toast = (msg, varibles= null) => {
-  
-  let toastContainer = document.querySelector("#snackbar");
-  toastContainer.innerHTML = `<span> ${msg} </span>`;
-  
-  varibles != null ? toastContainer.insertAdjacentText += `<a href='./?'> Update </a>` : '';
-  
-  toastContainer.classList.add('show');
-  
-  const removeToast = () => {
-    toastContainer.classList.remove('show');
-  }
-  
-}
-setTimeout(
-  document.querySelector('#snackbar').classList.remove('show')
-, 10000);
-
