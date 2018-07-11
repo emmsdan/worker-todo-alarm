@@ -14,10 +14,8 @@ window.addEventListener("load", () => {
         console.log (`Error: code E120:  ${err}`);
       })
   }
-  if (!_select('offices')){
-    OfficeModal.display('true');
-  }
-
+  if (!_select('offices')) return OfficeModal.display('true');
+  loadOffices();
 });
 
 function unsupported () {

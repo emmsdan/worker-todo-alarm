@@ -103,22 +103,33 @@ class idbStorage {
 }
 
   const _store = (item, value) => {
-    const data = JSON.parse(_select(item));
-    if (data !== null) {
-      if(data[0].name === value[0].name){
-        return toast ('Already Exist In Database')
+    
+    if ((data = JSON.parse(_select(item))) !== null) {
+      for ( let inf of data ) {
+        if ( inf.name === value[0].name){
+          toast ('Already Exist In Database')
+          return;
+        }
       }
-      localStorage.setItem(item, JSON.stringify(value));
-      toast ('Data entered into Database')
     }
+    localStorage.setItem(item, JSON.stringify(value));
+    toast ('Data entered into Database')
     return;
   }
   const _select = (item) => {
     return localStorage.getItem(item);
   }
-  const _delete = (item) => {
-    return localStorage.getItem(item);
+  const _selectJSON = (item) => {
+    return JSON.parse(_select(item));
   }
-
-// explicitly export class to global scope
+  const _delete = (item) => {
+    return localStorage.removeItem(item);
+  }
+  const _countOfficeItems = () => {
+    return _selectJSON('offices').length;
+  }
+  const _countItems = () => {
+    return localStorage.length;
+  }
+ // explicitly export class to global scope
 window.idbStorage = idbStorage;
