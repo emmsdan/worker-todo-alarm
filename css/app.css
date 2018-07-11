@@ -184,13 +184,13 @@ main {
 }
 
 .modal-content input[data-work-title='true'] {
-  width: 90%;
+  width: 80%;
   padding: 10px 20px;
   font-weight: 900;
   font-size: 2vmax;
 }
 .modal-content button[data-work-button='true'] {
-  width: 32%;
+  width: 99%;
   padding: 12px 20px;
   font-weight: 900;
   font-size: 2vmax;
@@ -201,7 +201,7 @@ main {
   cursor: pointer;
 }
 .modal-content select[data-work-select='true'] {
-  width: 32%;
+  width: 48%;
   padding: 10px 20px;
   font-weight: 900;
   font-size: 2vmax;
@@ -328,4 +328,46 @@ main {
 @keyframes fadein{0%{opacity:0}50%{opacity:0.5}100%{opacity:1}}
 .enterFading {
   animation:fadein 3s;
+}
+
+
+/* snackbar */
+#snackbar {
+  min-width: 300px; 
+  height: 30px;
+  margin-left: -125px;
+  background-color: #ff5722;
+  color: #fff; 
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px; 
+  position: fixed;
+  left: 40%; 
+  bottom: 30px;
+  visibility: hidden;
+  z-index: 300000;
+}
+
+#snackbar.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+#snackbar span{
+  background: none;
+  color: #fff;
+  word-wrap: break-word;
+}
+#snackbar a{
+  color: red;
+  text-transform: uppercase;
+  float: left;
+  padding: 2px;
+  margin-right: 10px;
+  text-decoration: none;
+}
+@media screen and   (min-width: 599px){   
+  #snackbar{
+    top: 20px;
+  }
 }

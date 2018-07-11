@@ -9,6 +9,8 @@
   <script src="logic/app.js"></script>
 </head>
 <body class="shell enterFading">
+  <div id="snackbar" class="w3-red-text">Welcome to CurrencyConverter.io</div>
+
   <header class="w3-animate-top"> 
       <h1 class="logo big">WorkersTask.io</h1>
       <h1 class="logo small">WT.io</h1>
@@ -36,20 +38,38 @@
       </div>
     </div>
   </main>
+
   <div class="modal enterFading" data-worker-modal="true">
     <div class="modal-content"> <div class="close" data-worker-modal='close'>x</div>
       <h1 class="theme-dark-color toUpperCase div">  Add Office </h1>
-      <form id="addOffice" onsubmit="return submitForm()">
-        <input data-work-title="true" placeholder="Name of Office">
-        <select data-work-select="true">
-          <option selected disabled>Opening Hour</option>
+
+      <form id="addOffice" onsubmit="return submitForm(this)">
+        <input data-work-title="true" id="officeName" placeholder="Name of Office">
+        <select data-work-select="true" id="openHour">
+          <option disabled value="" selected>Opening Hour</option>
+          <option value="6"> 6 AM </option>
+          <option value="7"> 7 AM </option>
+          <option value="8"> 8 AM </option>
+          <option value="9"> 9 AM </option>
+          <option value="10"> 10 AM </option>
+          <option value="11"> 11 AM </option>
+          <option value="12"> 12 AM </option>
         </select>
-        <select data-work-select="true">
-          <option selected disabled>Closing Hour</option>
+        <select data-work-select="true" id="closeHour">
+          <option disabled value="" selected>Closing Hour</option>
+          <option value="4"> 4 PM </option>
+          <option value="5"> 5 PM </option>
+          <option value="6"> 6 PM </option>
+          <option value="7"> 7 PM </option>
+          <option value="8"> 8 PM </option>
+          <option value="9"> 9 PM </option>
+          <option value="0"> not applicable </option>
         </select>
         <button data-work-button="true"> Add </button>
       </form>
     </div>
   </div>
+
+  
 </body>
 </html>
