@@ -2,11 +2,11 @@
 const submitForm = (node) => {
   
   const submitForm = document.querySelector('#'+node.id);
-  let form = [{node: node.id}];
+  let form = [{'formType': node.id}];
   let $response ='app-response';
   let fields = '';
   for (let adds of submitForm.querySelectorAll('[id]')){
-    fields = adds.id;
+    
     if(adds.value  == 'response'){
       $response = '.response';
     }
@@ -16,8 +16,7 @@ const submitForm = (node) => {
       return false;
     }
     if (node.id === 'addOffice') {
-      let ff = { fields : adds.value}
-      form.push (ff)
+      form[adds.id] = adds.value;
     }
  }
  console.log (' End Form Process ')
@@ -27,6 +26,25 @@ const submitForm = (node) => {
 
 const serverProcess = (fields) => {
   console.log (fields)
+  if (fields[0].formType === 'addOffice'){
+    let offices = localStorage.getItem('offices');
+    if (offices){
+      offices = JSON.parse(offices);
+      offices.push (`{"name" : "${fields.officeName}", "open" : "${fields.closeHour}", "close" : "${fields.openHour}"}`);
+      //const $object =  '{"office" : [, "Joshua"]}';
+
+      offices = JSON.stringify(offices);
+      localStorage.setItem ('offices', offices)
+    }else{
+      offices = [];
+      offices.push (`{"name" : "${fields.officeName}", "open" : "${fields.closeHour}", "close" : "${fields.openHour}"}`);
+      //const $object =  '{"office" : [, "Joshua"]}';
+
+      offices = JSON.stringify(offices);
+      localStorage.setItem ('offices', offices)
+    }
+  }
+  
 }
 
 /* a little toast, won't kill */
