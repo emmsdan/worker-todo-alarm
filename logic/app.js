@@ -1,14 +1,12 @@
 
 window.addEventListener("load", () => {
-  if(typeof EventSource === "undefined" || typeof(Storage) === "undefined" || !window.indexedDB)  return unsupported();
-    
+
   const modal = document.querySelector("[data-worker-modal='true']");
   // dynamically get the buttons that opens the modal
   const triggerModal = document.querySelectorAll("[data-worker-modal='trigger'] ");
     for (let btn of triggerModal) {
       btn.addEventListener("click", () => {
         modal.style.display = "block";
-        fetchEvents ();
       });
     }
   // dynamically Get the element that closes the modal
@@ -31,24 +29,33 @@ window.addEventListener("load", () => {
         return response.text();
       })
       .then ( (response) => {
-        let head = document.querySelector('head')
-        
-        let script = document.createElement('script');
-        script.setAttribute ('src', './logic/database.js');
-        head.appendChild(script);
 
-        script = document.createElement('script');
-        script.setAttribute ('src', './logic/logic.js');
-        head.appendChild(script);
-        
       })
       .catch ( (err) => {
         console.log (`Error: code E120:  ${err}`);
       })
   }
+  if (!_select('emmsdan')){
+    modal.style.display = "block";    
+  }
+
 });
 
 function unsupported () {
   document.querySelector('body').innerHTML = '<h1 style="margin: auto;"> Sorry, Your Browser is older than the Device !!!</h1>';
   return false;
+}
+
+if(typeof EventSource !== "undefined" || typeof(Storage) !== "undefined" || window.indexedDB) {
+  let head = document.querySelector('head')
+      
+  let script = document.createElement('script');
+  script.setAttribute ('src', './logic/database.js');
+  head.appendChild(script);
+  
+  script = document.createElement('script');
+  script.setAttribute ('src', './logic/logic.js');
+  head.appendChild(script);
+}else{
+  unsupported
 }

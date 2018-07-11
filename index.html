@@ -38,7 +38,8 @@
   </main>
   <div class="modal enterFading" data-worker-modal="true">
     <div class="modal-content"> <div class="close" data-worker-modal='close'>x</div>
-        <h1 class="theme-dark-color toUpperCase div">  Add Office </h1>
+      <h1 class="theme-dark-color toUpperCase div">  Add Office </h1>
+      <form id="addOffice" onsubmit="return submitForm()">
         <input data-work-title="true" placeholder="Name of Office">
         <select data-work-select="true">
           <option selected disabled>Opening Hour</option>
@@ -47,7 +48,7 @@
           <option selected disabled>Closing Hour</option>
         </select>
         <button data-work-button="true"> Add </button>
-      
+      </form>
     </div>
   </div>
 </body>
