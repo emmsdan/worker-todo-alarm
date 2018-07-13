@@ -2,7 +2,7 @@
 
 A simple todo alarm clock for work
 
-## Project Should like here (`https://emmsdan.github.io/worker-todo-alerm`)
+## Project Should like here (`https://emmsdan.github.io/worker-todo-alarm`)
 
 ## How it works
 
