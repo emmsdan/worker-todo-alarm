@@ -120,7 +120,12 @@ class idbStorage {
     return localStorage.getItem(item);
   }
   const _selectJSON = (item) => {
-    return JSON.parse(_select(item));
+    try {
+      return JSON.parse(_select(item));
+    }catch(e){
+      console.log (e, 'false')
+      return JSON.parse("{}");
+    }
   }
   const _delete = (item) => {
     return localStorage.removeItem(item);

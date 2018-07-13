@@ -53,7 +53,11 @@ const checkOfficeData = (count=0) => {
 const loadOffices = (count=0) => {
   let i = 0;
   const displayOffice = document.querySelector(".officeData");
-  displayOffice.innerHTML = '';
+  displayOffice.innerHTML = ''; 
+  if (_countOfficeItems() < 1) {
+    setTimeout(loadOffices, 1234); 
+    return;
+  }
   for ( let offices of _selectJSON("offices") ){
       let li = document.createElement("li");;
       li.innerHTML += (`<h3>${offices["name"]}</h3>- Opening Hour: <b>${offices["open"]}am</b> -- Closing Hour: <b>${offices["close"]}pm</b>`);
