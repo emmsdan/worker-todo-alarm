@@ -14,11 +14,18 @@ window.addEventListener("load", () => {
         console.log (`Error: code E120:  ${err}`);
       })
   }
-  if (!_select('offices')) return OfficeModal.display('true');
-    if (_countOfficeItems() > 0 ) {
-      setInterval(loadOffices, 4000)
-    }
-    console.log (_countOfficeItems())
+  if (!_select('offices')) {
+    OfficeModal.display('true');
+  }
+    setInterval(() => {
+      if (_countOfficeItems() > 0 ) {
+        loadOffices();
+      }else{
+        clearOffice();
+      }
+    }, 4000);
+  
+    console.log (_countOfficeItems(), 45678)
 });
 
 function unsupported () {

@@ -46,7 +46,7 @@ const loadOffices = (count=0) => {
   const displayOffice = document.querySelector(".officeData");
   displayOffice.innerHTML = '';
   if (_countOfficeItems() === count) {
-    console.log (`Nothing to Load`)
+    console.log (`No Item to Load...`)
     return;
   }
   for ( let offices of _selectJSON("offices") ){
@@ -58,4 +58,13 @@ const loadOffices = (count=0) => {
       displayOffice.appendChild(li);
   }
   return;
+}
+
+const clearOffice = () => {
+  const displayOffice = document.querySelector(".officeData");
+  displayOffice.innerHTML = `<h2> Ops Nothing in the Office </h2>`;
+  const OfficeModal = new Modal();
+  if ( OfficeModal.opened === true){
+      return OfficeModal.display();
+  }
 }
