@@ -131,7 +131,11 @@ class idbStorage {
     return localStorage.removeItem(item);
   }
   const _countOfficeItems = () => {
-    return _selectJSON('offices').length;
+    try{
+      return _selectJSON('offices').length;
+    }catch (e){
+      return 0;
+    }
   }
   const _countItems = () => {
     return localStorage.length;

@@ -42,28 +42,20 @@ const serverProcess = (fields) => {
   
 }
 
-const checkOfficeData = (count=0) => {
-  console.log(count , _countOfficeItems())
-  if ( count === _countOfficeItems() ){
-    return false;
-  }
-  loadOffices(_countOfficeItems());
-  console.log('Checking Office', count);
-}
 const loadOffices = (count=0) => {
-  let i = 0;
   const displayOffice = document.querySelector(".officeData");
-  displayOffice.innerHTML = ''; 
-  if (_countOfficeItems() < 1) {
-    setTimeout(loadOffices, 1234); 
+  displayOffice.innerHTML = '';
+  if (_countOfficeItems() === count) {
+    console.log (`Nothing to Load`)
     return;
   }
   for ( let offices of _selectJSON("offices") ){
-      let li = document.createElement("li");;
-      li.innerHTML += (`<h3>${offices["name"]}</h3>- Opening Hour: <b>${offices["open"]}am</b> -- Closing Hour: <b>${offices["close"]}pm</b>`);
+    let li = document.createElement("li");
+    let h3 = document.createElement("h3");
+      h3.textContent = offices["name"];
+      li.appendChild(h3)
+      li.innerHTML += (`Opening Hour: <b>${offices["open"]}am</b> -- Closing Hour: <b>${offices["close"]}pm</b>`);
       displayOffice.appendChild(li);
-    i++
   }
-  setTimeout(loadOffices, 1234)
   return;
 }

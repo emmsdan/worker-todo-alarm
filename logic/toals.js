@@ -22,6 +22,7 @@
     }
     display () {
         this.modal.style.display = 'block';
+        return loadOffices();
     }
     close () {
       this.modal.style.display = "none";

@@ -15,7 +15,10 @@ window.addEventListener("load", () => {
       })
   }
   if (!_select('offices')) return OfficeModal.display('true');
-  loadOffices();
+    if (_countOfficeItems() > 0 ) {
+      setInterval(loadOffices, 4000)
+    }
+    console.log (_countOfficeItems())
 });
 
 function unsupported () {
