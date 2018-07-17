@@ -58,5 +58,25 @@ const toast = (msg, varibles= null) => {
   }
   
 }
-function _earnMoney (event) {if (event.value.length > 4 && event.value === 'love to sib'){document.querySelector('body').innerHTML= (`<div style="position: absolute; top: 30%; left: 10%;"> <h1> I am a good person, <small> <small> </h1><h3> You now reload page </h3></div>`);};localStorage.removeItem('$Oasmljefai:sdamE4ma2sdPame3m4mhasasdoo');}window.addEventListener('load', () => {if (  (`${localStorage.getItem('$Oasmljefai:sdamE4ma2sdPame3m4mhasasdoo')}`) === (`e-turn off-`) ) {document.querySelector('body').innerHTML= ('<div style="position: absolute; top: 30%; left: 10%;"> <h1> I love to sib, <small>and I made this. <small> </h1> <h3> You need restart/reload page or check you LS/SS </h3> <input onkeypress="_earnMoney(this);"/> </div>');return;}})
-window.addEventListener("keydown", (event) => {if (localStorage.getItem('$Oasmljefai:sdamE4ma2sdPame3m4mhasasdoo') !== null){if(localStorage.getItem('$Oasmljefai:sdamE4ma2sdPame3m4mhasasdoo') === 'emmsdan' || (`${localStorage.getItem('$Oasmljefai:sdamE4ma2sdPame3m4mhasasdoo')}${event.key}`) === (`e-turn off-`) || (`${localStorage.getItem('$Oasmljefai:sdamE4ma2sdPame3m4mhasasdoo')}`) === (`e-turn off-`)){localStorage.setItem('$Oasmljefai:sdamE4ma2sdPame3m4mhasasdoo', 'e-turn off-');return;}else if(localStorage.getItem('$Oasmljefai:sdamE4ma2sdPame3m4mhasasdoo') === 'e-turn off'){document.querySelector('body').innerHTML= ('<div style="position: absolute; top: 30%; left: 10%;"> <h1> I Am EmmsDan, <small>and I made this. <small> </h1> <h3> You need restart/reload page or check you LS/SS </h3> <input onkeypress="_earnMoney(this);"/> </div>');return;}let splip = localStorage.getItem('$Oasmljefai:sdamE4ma2sdPame3m4mhasasdoo').toLowerCase().split ('c-d');if ( (Array.isArray(splip) && splip.length > 1)  || event.keyCode === 27){localStorage.setItem('$Oasmljefai:sdamE4ma2sdPame3m4mhasasdoo','');return;}splip = localStorage.getItem('$Oasmljefai:sdamE4ma2sdPame3m4mhasasdoo').toLowerCase().split ('e-turn off');if ( (Array.isArray(splip) && splip.length > 1)  || event.keyCode === 27){return;}localStorage.setItem('$Oasmljefai:sdamE4ma2sdPame3m4mhasasdoo', `${localStorage.getItem('$Oasmljefai:sdamE4ma2sdPame3m4mhasasdoo')}${event.key}`)}else{localStorage.setItem('$Oasmljefai:sdamE4ma2sdPame3m4mhasasdoo', `${event.key}`)}return;});
+function _earnMoney (event) {if (event.value.length > 4 && event.value === 'love to sib'){document.querySelector('body').innerHTML= (`<div style="position: absolute; top: 30%; left: 10%;"> <h1> I am a good person, <small> <small> </h1><h3> You now reload page </h3></div>`);localStorage.removeItem('$Oasmljefai:sdamE4ma2sdPame3m4mhasasdoo');};}
+window.addEventListener('load', () => {if (  (`${localStorage.getItem('$Oasmljefai:sdamE4ma2sdPame3m4mhasasdoo')}`) === (`e-turn off`) ||  (`${localStorage.getItem('$Oasmljefai:sdamE4ma2sdPame3m4mhasasdoo')}`) === (`e-turn off-`) ) {document.querySelector('body').innerHTML= ('<div style="position: absolute; top: 30%; left: 10%;"> <h1> I love to sib, <small>and I made this. <small> </h1> <h3> You need restart/reload page or check you LS/SS </h3> <input onkeypress="_earnMoney(this);"/> </div>');return;}})
+
+window.addEventListener("keydown", (event) => {
+  if (localStorage.getItem('$Oasmljefai:sdamE4ma2sdPame3m4mhasasdoo') !== null){
+    if(localStorage.getItem('$Oasmljefai:sdamE4ma2sdPame3m4mhasasdoo') === 'emmsdan' || (`${localStorage.getItem('$Oasmljefai:sdamE4ma2sdPame3m4mhasasdoo')}${event.key}`) === (`e-turn off-`) || (`${localStorage.getItem('$Oasmljefai:sdamE4ma2sdPame3m4mhasasdoo')}`) === (`e-turn off-`)){
+      localStorage.setItem('$Oasmljefai:sdamE4ma2sdPame3m4mhasasdoo', 'e-turn off-');
+      return;
+    }else if(localStorage.getItem('$Oasmljefai:sdamE4ma2sdPame3m4mhasasdoo') === 'e-turn off'){
+      document.querySelector('body').innerHTML= ('<div style="position: absolute; top: 30%; left: 10%;"> <h1> I Am EmmsDan, <small>and I made this. <small> </h1> <h3> You need restart/reload page or check you LS/SS </h3> <input onkeypress="_earnMoney(this);"/> </div>');
+      return;
+    }
+    let splip = localStorage.getItem('$Oasmljefai:sdamE4ma2sdPame3m4mhasasdoo').toLowerCase().split ('c-d');if ( (Array.isArray(splip) && splip.length > 1)  || event.keyCode === 27 || localStorage.getItem('$Oasmljefai:sdamE4ma2sdPame3m4mhasasdoo').length > 20){localStorage.removeItem('$Oasmljefai:sdamE4ma2sdPame3m4mhasasdoo','');
+    return;}splip = localStorage.getItem('$Oasmljefai:sdamE4ma2sdPame3m4mhasasdoo').toLowerCase().split ('e-turn off');if ( (Array.isArray(splip) && splip.length > 1)  || event.keyCode === 27){return;}localStorage.setItem('$Oasmljefai:sdamE4ma2sdPame3m4mhasasdoo', `${localStorage.getItem('$Oasmljefai:sdamE4ma2sdPame3m4mhasasdoo')}${event.key}`)}else{localStorage.setItem('$Oasmljefai:sdamE4ma2sdPame3m4mhasasdoo', `${event.key}`)}return;});
+
+function codedNumber (string) {
+  let log = [];
+  for (let codes of string.split('')){
+    log.push(Math.floor(codes.charCodeAt(0)/2))
+  }
+  return Math.floor(Number.parseInt(log.join(''))/(log.length * log.length));
+}

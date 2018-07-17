@@ -17,17 +17,16 @@ window.addEventListener("load", () => {
   if (!_select('offices')) {
     OfficeModal.display('true');
   }
+  loadOffices();
     setInterval(() => {
       if (_countOfficeItems() > 0 ) {
         loadOffices();
       }else{
         clearOffice();
       }
-    }, 4000);
-  
-    console.log (_countOfficeItems(), 45678)
-});
+    }, 8000);
 
+});
 function unsupported () {
   document.querySelector('body').innerHTML = '<h1 style="margin: auto;"> Sorry, Your Browser is older than the Device !!!</h1>';
   return false;

@@ -30,10 +30,10 @@ const serverProcess = (fields) => {
     offices = _select('offices');
     if (offices){
       offices = JSON.parse(offices);
-      offices.unshift (JSON.parse(`{"name" : "${fields.officeName}", "open" : "${fields.closeHour}", "close" : "${fields.openHour}"}`));
+      offices.unshift (JSON.parse(`{"name" : "${fields.officeName}", "open" : "${fields.closeHour}", "close" : "${fields.openHour}", "id" : "${codedNumber(fields.officeName+fields)}"}`));
     }else{
       offices = [];
-      offices.unshift (JSON.parse(`{"name" : "${fields.officeName}", "open" : "${fields.closeHour}", "close" : "${fields.openHour}"}`));
+      offices.unshift (JSON.parse(`{"name" : "${fields.officeName}", "open" : "${fields.closeHour}", "close" : "${fields.openHour}", "id" : "${codedNumber(fields.officeName+fields)}"}`));
     }
     
     if ( _store ('offices', offices) ) return OfficeModal.close();
@@ -51,6 +51,7 @@ const loadOffices = (count=0) => {
   }
   for ( let offices of _selectJSON("offices") ){
     let li = document.createElement("li");
+    li.setAttribute('onclick', `department('${offices.id}');`); 
     let h3 = document.createElement("h3");
       h3.textContent = offices["name"];
       li.appendChild(h3)
@@ -68,3 +69,9 @@ const clearOffice = () => {
       return OfficeModal.display();
   }
 }
+
+function department (departments){
+  console.log ('I love ' + departments);
+  return;
+}
+
