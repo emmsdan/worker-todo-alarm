@@ -27,9 +27,7 @@ const submitForm = (node) => {
 const serverProcess = (fields) => {
   let offices = '';
   if (fields[0].formType === 'addOffice'){
-    offices = _select('offices');
-    if (offices){
-      offices = JSON.parse(offices);
+  offices = JSON.parse(offices);
       offices.unshift (JSON.parse(`{"name" : "${fields.officeName}", "open" : "${fields.closeHour}", "close" : "${fields.openHour}", "id" : "${codedNumber(fields.officeName+fields)}"}`));
     }else{
       offices = [];
